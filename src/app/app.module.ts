@@ -1,26 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+
 
 import { AppComponent } from './app.component';
-import { L1Component } from './l1/l1.component';
-import { L2Component } from './l2/l2.component';
-import { L3Component } from './l3/l3.component';
-import { L4Component } from './l4/l4.component';
-import { L5Component } from './l3/l5/l5.component';
-import { L6Component } from './l6/l6.component';
+import { DanhsachComponent } from './danhsach/danhsach.component';
+import { ChitietComponent } from './chitiet/chitiet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    L1Component,
-    L2Component,
-    L3Component,
-    L4Component,
-    L5Component,
-    L6Component
+    DanhsachComponent,
+    ChitietComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      { path: "",
+      component:DanhsachComponent },
+      {path: 'danhsach', component:DanhsachComponent},
+      { path: 'danhsach/chitet/:id', component: ChitietComponent },
+      { path: '**', redirectTo: 'products', pathMatch: 'full' },
+      ])
   ],
   providers: [],
   bootstrap: [AppComponent]

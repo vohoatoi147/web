@@ -1,0 +1,39 @@
+<br>
+<div class="card">
+    <div class="card-header">
+        <H1>Danh sách sinh viên</H1>
+    </div>
+    <div class="card-body">
+        <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </nav>
+        <br>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">LastName</th>
+                    <th scope="col">FirstName</th>
+                    <th scope="col">EnrollDate</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+
+            <tr *ngFor='let ds of students'>
+                <td>{{ds.LastName}}</td>
+                <td>{{ds.FirstMidName}}</td>
+                <td>{{ds.EnrollmentDate}}</td>
+                <td>
+                    <button type="button" class="btn btn-light"><a [routerLink]="['danhsach/chitiet',ds.ID]"><i
+                                class="fas fa-info-circle"></i></a></button>
+
+                    <button type="button" class="btn btn-light" (click)="xoa(ds.ID)"><i
+                            class="fas fa-trash-alt"></i></button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

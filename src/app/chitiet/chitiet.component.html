@@ -1,0 +1,41 @@
+<br>
+<div class="card">
+    <div class="card-header">
+        <H1>Detail</H1>
+    </div>
+    <div class="card-body">
+        <table>
+            <tr *ngFor='let sv of sinhvien'>
+                <td>Last Name: </td>
+                <td>{{sv.LastName}}</td>
+            </tr>
+            <tr *ngFor='let sv of sinhvien'>
+                <td>First Name: </td>
+                <td>{{sv.FirstName}}</td>
+            </tr>
+            <tr *ngFor='let sv of sinhvien'>
+                <td>Enroll Date: </td>
+                <td>{{sv.Enroll}}</td>
+            </tr>
+        </table>
+        <br>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    
+                    <th scope="col">Course Title</th>
+                    <th scope="col">Grade</th>
+                    <th scope="col">Credits</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let student of array'>
+                    <td>{{student.title}}</td>
+                    <td>{{student.grade}}</td>
+                    <td>{{student.credit}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

@@ -1,0 +1,223 @@
+<br />
+<div class="card text-center">
+
+    <div class="card" style="width: 18rem; margin: 0px auto;">
+        <img src="{{teo.hinh}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <ul style="text-align: left;">
+                <li>{{teo.ten}}</li>
+                <li>{{teo.ns}}</li>
+                <li>{{teo.gt}}</li>
+                <li>{{teo.diem}}</li>
+            </ul>
+        </div>
+    </div>
+    <br />
+
+
+    <br />
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">Hình</th>
+                <th scope="col">Họ và Tên</th>
+                <th scope="col">Giới tính</th>
+                <th scope="col">Điểm</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let a of student">
+                <td><img src="{{a.hinh}}" width="50px;"></td>
+                <td>{{a.ten}}</td>
+                <td>{{a.gt}}</td>
+                <td>{{a.diem}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br />
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">id</th>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quality</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let gh of giohang">
+                <td>{{gh.id}}</td>
+                <td><img src="{{gh.hinh}}" height="50px"></td>
+                <td>{{gh.name}}</td>
+                <td>{{gh.gia}}</td>
+                <td><button type="button" class="btn btn-success" (click)="tang(gh.id)">+</button>&nbsp;{{gh.sl}}
+                    <button type="button" class="btn btn-danger" (click)="giam(gh.id)">-</button></td>
+                <td><button type="button" class="btn btn-primary">View</button>
+                    <button type="button" class="btn btn-danger d">Delete</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">Tổng tiền</td>
+
+                <td>{{tongtien()}}</td>
+
+            </tr>
+
+        </tbody>
+    </table>
+
+
+    <br />
+    <div class="card-header dau">
+        Leaf Rake
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-2" style="text-align: left;">
+                <p>Name</p>
+                <p>Code</p>
+                <p>Decription</p>
+                <p>Availability</p>
+                <p>Price</p>
+                <p>5 Star rating:</p>
+            </div>
+            <div class="col-sm-2" style="text-align: left;">
+                <p>Leaf Rake</p>
+                <p>GDN-0011</p>
+                <p>Leaf Rake with 48-inch wooden dandle</p>
+                <p>March 19,2016</p>
+                <p>19.95</p>
+                <p>3.2</p>
+            </div>
+            <div class="col-sm-6  ">
+                <img class="hinh" src="assets\choi.jpg">
+            </div>
+
+
+        </div>
+        <div class="card-footer text-muted cuoi">
+            <form>
+                <button type="submit" class="btn btn-primary">Back</button>
+            </form>
+        </div>
+    </div>
+<br />
+
+<div class="card text-center">
+        <div class="card-header dau" style="text-align: left">
+            List Products
+        </div>
+        <div class="card-body">
+            <form class="form-inline" action="/action_page.php">
+                <label for="email">Filter by:</label>
+                <input type="email" class="form-control nhap" id="email">
+            </form>
+    
+            <h3 class="h3" style="text-align: left">Filtered By:</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th><button type="button" class="btn btn-primary">Hien image</button></th>
+                        <th>Product</th>
+                        <th>Code</th>
+                        <th>Availibile</th>
+                        <th>Price</th>
+                        <th>5 Star Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let ds of danhsach">
+                        <td><img src="{{ds.hinh}}" width="50px;" height="50px;"></td>
+                        <td>{{ds.ten}}</td>
+                        <td>{{ds.code}}</td>
+                        <td>{{ds.ngay}}</td>
+                        <td>{{ds.gia}}</td>
+                        <td><img src="assets\sao.jpg" width="150px;" height="50px;"></td>
+                    </tr>
+                    
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <br />
+
+    <p class="home">Home/Persor</p>
+<br /> <br /> <br /> <br />
+
+<form class="form-inline s" action="/action_page.php">
+    <label for="email" class="mr-sm-2">Show</label>
+    <div class="dropdown">
+        <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+            10
+        </button>
+        <div class="dropdown-menu ">
+            <a class="dropdown-item" href="#">1</a>
+            <a class="dropdown-item" href="#"> 2</a>
+            <a class="dropdown-item" href="#"> 3</a>
+        </div>
+    </div>
+    <label for="email" class="mr-sm-2">information</label>
+    <button type="button" class="btn btn-primary e" style="margin-left: 300px;">Excel</button>
+    <button type="button" class="btn btn-primary p">PDF</button>
+    <input class="form-control mr-sm-2 p" type="text " placeholder="Search">
+    <button type="button" class="btn btn-primary p">+Add Employee</button>
+</form>
+<table class="table t">
+    <thead>
+        <tr>
+            <th scope="col">id</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td><i class="fas fa-info-circle">&nbsp;&nbsp;&nbsp;&nbsp;</i><i
+                    class="fas fa-pen">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-trash-alt"></i></i></td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            <td><i class="fas fa-info-circle">&nbsp;&nbsp;&nbsp;&nbsp;</i><i
+                    class="fas fa-pen">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-trash-alt"></i></i></td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+            <td><i class="fas fa-info-circle">&nbsp;&nbsp;&nbsp;&nbsp;</i><i
+                    class="fas fa-pen">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-trash-alt"></i></i></td>
+        </tr>
+        <tr>
+            <th scope="row">4</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td><i class="fas fa-info-circle">&nbsp;&nbsp;&nbsp;&nbsp;</i><i
+                    class="fas fa-pen">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-trash-alt"></i></i></td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="pagination pagination danhmuc">
+    <li class="page-item"><a class="page-link" href="#"><<</a></li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">>></a></li>
+  </ul>
+
+</div>

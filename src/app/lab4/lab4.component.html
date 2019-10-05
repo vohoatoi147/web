@@ -1,0 +1,23 @@
+<table class="table table-bordered">
+    <thead>
+        <tr colspan="8" style="background: gray">DANH SÁCH HÀNG HÓA</tr>
+        <tr>
+            <th (click)="order('name')">Sản Phẩm</th>
+            <th (click)="order('price')">Đơn Giá</th>
+            <th (click)="order('discount')">Giảm Giá</th>
+            <th (click)="order('date')">Ngày</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let l of list | paginate: { itemsPerPage: itemperpage, currentPage: cur }">
+                <td >{{l.name}}</td>
+                <td>{{l.price}}</td>
+                <td>{{l.discount}}</td>
+                <td>{{l.date}}</td>
+        </tr>
+    </tbody>
+</table>
+<button type="button" class="btn btn-danger" (click)="goPre()">Previous</button>
+<button type="button" class="btn btn-warning" (click)="goNext()">Next</button>
+<p>The hero's birthday is {{ birthday | date }}</p>
+<p>our money is {{ money | currency:'VND':true }}</p>

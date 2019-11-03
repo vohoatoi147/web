@@ -75,8 +75,10 @@ export class Lab5Component implements OnInit {
   }
 
   thanhtien() {
-		let sum = 0;
+    let sum = 0;
+   
 		for (let i = 0; i < this.scope.length; i++) {
+      if(this.scope[i].id !=="")
 			sum += this.scope[i].price * this.scope[i].soluong;
 		}
 		return sum;

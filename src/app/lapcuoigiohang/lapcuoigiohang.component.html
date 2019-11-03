@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quality</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of product">
+            <th>{{a.productname}}</th>
+            <td>{{a.price}}</td>
+            <td>{{a.soluong}}</td>
+            <td>{{tinhtien(a.price,a.soluong)}}</td>
+        </tr>
+
+    </tbody>
+</table>
+<a [routerLink]="['/trangchu']">Home</a>

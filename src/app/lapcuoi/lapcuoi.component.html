@@ -1,0 +1,76 @@
+<div class="container">
+    <img src="./assets/logo.jpg" width="150px;">
+    <h3>
+        Shop Guitar</h3>
+    <br />
+    <hr style="border-color: brown;">
+
+    <div class="row">
+        <div class="col-sm-3" style="background-color: darksalmon;">
+            <h4 style="color: brown;">Link</h4>
+            <ul>
+                <li><a [routerLink]="['/giohang']">View Card</a></li>
+                <li><a [routerLink]="['/login']">Login/Gister</a></li>
+                <li><a [routerLink]="['/trangchu']">Home</a></li>
+            </ul>
+            <h4 style="color: brown;">Categories</h4>
+            <ul>
+                <li>Guitars</li>
+                <li>Basses</li>
+                <li>Drums</li>
+            </ul>
+            <h4 style="color: brown;">Temp Link</h4>
+            <p>Admin</p>
+
+        </div>
+        <div class="col-sm-9">
+            <p>We have a great selection of mucical intruments uncuding guistar, basses and drums.And we`re constanly
+                adding more to give you the best selection possible !
+            </p>
+            <h3 style="color: brown;">Featured Products</h3>
+
+            <!--code-->
+
+            <br />
+            <div class="card text-center style" *ngFor="let a of product">
+                <div class="card-header">
+                    <h4><a [routerLink]="['/trangchu',a.id]">{{a.productname}}</a></h4>
+                </div>
+                <div class="card-body">
+                    <img src="{{a.hinh}}" width="150px;">
+                </div>
+                <div class="card-footer text-muted">
+                    {{a.description}}
+                </div>
+            </div>
+
+            <!--code-->
+
+
+        </div>
+    </div>
+    <hr style="border-color: brown;">
+
+    <div class="row" style="background-color:lightpink">
+        <div class="col-sm-4">
+            <h3>VỀ CHÚNG TÔI</h3>
+            <li> Giới thiệu chung</li>
+            <li> Hệ thống showroom, đại lý </li>
+            <li>Liên Hệ / Góp Ý </li>
+            <li>Điều khoản sử dụng website</li>
+        </div>
+        <div class="col-sm-4">
+            <h3> HƯỚNG DẪN CHUNG</h3>
+            <li>Giao hàng - Đổi trả</li>
+            <li>Hướng dẫn mua hàng</li>
+            <li>Thanh toán và bảo mật</li>
+            <li>Chính sách bảo hành</li>
+            <li>Mua trả góp</li>
+        </div>
+        <div class="col-sm-4">
+            <h3> HỖ TRỢ KHÁCH HÀNG</h3>
+            Gọi mua hàng: 1800 6715 (Miễn Phí) Khiếu nại, Bảo hành: 024 3851 9888 Thời gian phục vụ: 8h-22h Email:
+            info@vietthuong.com.vn
+        </div>
+
+    </div>

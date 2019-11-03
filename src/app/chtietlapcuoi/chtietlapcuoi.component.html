@@ -1,0 +1,81 @@
+<div class="container">
+    <img src="./assets/logo.jpg" width="150px;">
+    <h3>
+        Shop Guitar</h3>
+    <br />
+    <hr style="border-color: brown;">
+
+    <div class="row">
+        <div class="col-sm-3" style="background-color: darksalmon;">
+            <h4 style="color: brown;">Link</h4>
+            <ul>
+                <li><a [routerLink]="['/giohang']">View Card</a></li>
+                <li><a [routerLink]="['/login']">Login/Gister</a></li>
+                <li><a [routerLink]="['/trangchu']">Home</a></li>
+            </ul>
+            <h4 style="color: brown;">Categories</h4>
+            <ul>
+                <li>Guitars</li>
+                <li>Basses</li>
+                <li>Drums</li>
+            </ul>
+            <h4 style="color: brown;">Temp Link</h4>
+            <p>Admin</p>
+
+        </div>
+        <div class="col-sm-9">
+            <p>We have a great selection of mucical intruments uncuding guistar, basses and drums.And we`re constanly
+                adding more to give you the best selection possible !
+            </p>
+            <h3 style="color: brown;">Featured Products</h3>
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>{{product.productname}}</h3>
+                    <img src="{{product.hinh}}" width="200px;" height="250px;">
+                </div>
+                <div class="col-sm-8">
+                    <p>List Price:${{product.price}}</p>
+                    <p>Discount:{{product.giamgia}}%</p>
+                    <p>Your Price:{{yourprice()}}</p>
+                    <p>Quanlity</p>
+                    <form>
+                        <input type="number" [(ngModel)]="soluong" [ngModelOptions]="{standalone: true}">
+                        <button type="button" style="width:100 px;" (click)='addToCard()'>Add to card</button>
+                    </form>
+
+                    <h3 style="color: burlywood;">Discription</h3>
+                    <p>{{product.description}}</p>
+                    <ul>
+                        <li *ngFor="let a of feature">{{a.text}}</li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <hr style="border-color: brown;">
+
+    <div class="row" style="background-color:lightpink">
+        <div class="col-sm-4">
+            <h3>VỀ CHÚNG TÔI</h3>
+            <li> Giới thiệu chung</li>
+            <li> Hệ thống showroom, đại lý </li>
+            <li>Liên Hệ / Góp Ý </li>
+            <li>Điều khoản sử dụng website</li>
+        </div>
+        <div class="col-sm-4">
+            <h3> HƯỚNG DẪN CHUNG</h3>
+            <li>Giao hàng - Đổi trả</li>
+            <li>Hướng dẫn mua hàng</li>
+            <li>Thanh toán và bảo mật</li>
+            <li>Chính sách bảo hành</li>
+            <li>Mua trả góp</li>
+        </div>
+        <div class="col-sm-4">
+            <h3> HỖ TRỢ KHÁCH HÀNG</h3>
+            Gọi mua hàng: 1800 6715 (Miễn Phí) Khiếu nại, Bảo hành: 024 3851 9888 Thời gian phục vụ: 8h-22h Email:
+            info@vietthuong.com.vn
+        </div>
+
+    </div>
